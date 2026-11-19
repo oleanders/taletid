@@ -1,0 +1,17 @@
+{
+  "name": "taletid",
+  "private": true,
+  "scripts": {
+    "start": "concurrently -k \"elm-watch hot\" \"vite\"",
+    "build": "elm-watch make --optimize && vite build",
+    "dev": "npm start",
+    "prestart": "elm-watch make"
+  },
+  "devDependencies": {
+    "elm": "0.19.1-6",
+    "elm-watch": "^1.2.9",
+    "vite": "^8.0.0",
+    "concurrently": "^10.0.0",
+    "vite-plugin-pwa": "^1.3.0"
+  }
+}

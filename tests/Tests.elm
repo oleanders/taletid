@@ -1,22 +1,13 @@
-module Tests exposing (..)
+module Tests exposing (all)
 
-import Test exposing (..)
 import Expect
-
-
--- Check out http://package.elm-lang.org/packages/elm-community/elm-test/latest to learn more about testing in Elm!
+import Main exposing (formaterTidspunkt2, settNySluttTid)
+import Test exposing (Test, describe, test)
 
 
 all : Test
 all =
-    describe "A Test Suite"
-        [ test "Addition" <|
-            \_ ->
-                Expect.equal 10 (3 + 7)
-        , test "String.left" <|
-            \_ ->
-                Expect.equal "a" (String.left 1 "abcdefg")
-        , test "This test should fail" <|
-            \_ ->
-                Expect.fail "failed as expected!"
+    describe "Nedtelling"
+        [ test "viser minutt og sekund" <| \_ -> Expect.equal "01:01" (formaterTidspunkt2 61)
+        , test "legger til valgte minutter" <| \_ -> Expect.equal 121000 (settNySluttTid 1000 2)
         ]
